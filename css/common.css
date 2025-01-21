@@ -1,0 +1,15 @@
+body {
+  background-color: #121212;
+  color: white;
+  font-family: 'Segoe UI';
+}
+
+.property-selector {
+  background-color: #252525;
+  color: white;
+
+  border: 0.15rem dashed whitesmoke;
+  border-radius: 25rem;
+
+  font-size: large;
+}
