@@ -4,6 +4,11 @@ body {
   font-family: 'Segoe UI';
 }
 
+#center {
+  max-width: 64rem;
+  margin: 0 auto;
+}
+
 .property-selector {
   background-color: #252525;
   color: white;

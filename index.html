@@ -8,165 +8,166 @@
   <script src="./js/flexbox.js"></script>
 </head>
 <body>
-  <h1> Flexbox 101</h1>
-  <p>To use flexbox we need to set the display property of an element as follows:</p>
-  <code>display: flex;</code>
-  <hr>
+  <div id="center">
+    <h1> Flexbox 101</h1>
+    <p>To use flexbox we need to set the display property of an element as follows:</p>
+    <code>display: flex;</code>
+    <hr>
 
-  <h2>flex-direction</h2>
-  <p>Specifies the direction in which the items inside the flexbox container will stack.</p>
-  <ul>
-    <li>row: Stacks items horizontally (default).</li>
-    <li>row-reverse: Same as row but items go in reverse order.</li>
-    <li>column: Stacks items vertically.</li>
-    <li>column-reverse: Same as column but items go in reverse order.</li>
-  </ul>
+    <h2>flex-direction</h2>
+    <p>Specifies the direction in which the items inside the flexbox container will stack.</p>
+    <ul>
+      <li>row: Stacks items horizontally (default).</li>
+      <li>row-reverse: Same as row but items go in reverse order.</li>
+      <li>column: Stacks items vertically.</li>
+      <li>column-reverse: Same as column but items go in reverse order.</li>
+    </ul>
 
-  <select id="flex-direction-selector" class="property-selector">
-    <option value="row" selected>row</option>
-    <option value="row-reverse">row-reverse</option>
-    <option value="column">column</option>
-    <option value="column-reverse">column-reverse</option>
-  </select>
-  <br>
+    <select id="flex-direction-selector" class="property-selector">
+      <option value="row" selected>row</option>
+      <option value="row-reverse">row-reverse</option>
+      <option value="column">column</option>
+      <option value="column-reverse">column-reverse</option>
+    </select>
+    <br>
 
-  <code id="flex-direction-code">flex-direction: row;</code>
-  <div id="flex-direction-container" class="container flex-direction-row">
-    <div class="block">1</div>
-    <div class="block">2</div>
-    <div class="block">3</div>
+    <code id="flex-direction-code">flex-direction: row;</code>
+    <div id="flex-direction-container" class="container flex-direction-row">
+      <div class="block">1</div>
+      <div class="block">2</div>
+      <div class="block">3</div>
+    </div>
+    <hr>
+
+    <h2>flex-wrap</h2>
+    <p>Specifies if items would wrap according to screen size (resize viewport to notice).</p>
+    <ul>
+      <li>nowrap: Items will not wrap (default).</li>
+      <li>wrap: Items will wrap if necessary.</li>
+      <li>wrap-reverse: Same as wrap but but items go in reverse order.</li>
+    </ul>
+
+    <select id="flex-wrap-selector" class="property-selector">
+      <option value="nowrap" selected>nowrap</option>
+      <option value="wrap">wrap</option>
+      <option value="wrap-reverse">wrap-reverse</option>
+    </select>
+    <br>
+
+    <code id="flex-wrap-code">flex-wrap: nowrap;</code>
+    <div id="flex-wrap-container" class="container flex-direction-row flex-wrap-nowrap">
+      <div class="block">1</div>
+      <div class="block">2</div>
+      <div class="block">3</div>
+      <div class="block">4</div>
+      <div class="block">5</div>
+      <div class="block">6</div>
+      <div class="block">7</div>
+      <div class="block">8</div>
+      <div class="block">9</div>
+    </div>
+    <hr>
+
+    <h2>flex-flow</h2>
+    <p>Is a combination of flex-direction and flex-wrap properties into a single one</p>
+    <code>flex-flow: [direction] [wrap]; </code>
+    <hr>
+    
+    <h2>justify-content</h2>
+    <p>Aligns flex items in main-axis (horizontally).</p>
+    <ul>
+      <li>flex-start: Flex items will be at the start of the container (default)</li>
+      <li>flex-end: Flex items will be at the end of the container.</li>
+      <li>space-between: Flex items will have equal space between them.</li>
+      <li>space-around: Flex items will have a space before, between, and after them.</li>
+      <li>space-evenly: Flex items will space around evenly.</li>
+      <li>center: Flex items will go to the middle of the container</li>
+    </ul>
+
+    <select id="flex-justify-content-selector" class="property-selector">
+      <option value="flex-start" selected>flex-start</option>
+      <option value="flex-end">flex-end</option>
+      <option value="space-between">space-between</option>
+      <option value="space-around">space-around</option>
+      <option value="space-evenly">space-evenly</option>
+      <option value="center">center</option>
+    </select>
+    <br>
+
+    <code id="flex-justify-content-code">justify-content: flex-start;</code>
+    <div id="flex-justify-content-container" class="container flex-direction-row flex-justify-content-flex-start">
+      <div class="block">1</div>
+      <div class="block">2</div>
+      <div class="block">3</div>
+    </div>
+    <hr>
+
+    <h2>align-items</h2>
+    <p>Aligns flex items in cross-axis (vertically).</p>
+    <ul>
+      <li>flex-start: Flex items will be at the top of the container (default)</li>
+      <li>flex-end: Flex items will be at the bottom of the container.</li>
+      <li>stretch : Flex items will stretch to fill remaining space (default).</li>
+      <li>center: Flex items will go to the middle of the container</li>
+      <li>baseline: Flex items will be aligned to their baseline</li>
+    </ul>
+
+    <select id="flex-align-items-selector" class="property-selector">
+      <option value="flex-start">flex-start</option>
+      <option value="flex-end">flex-end</option>
+      <option value="stretch" selected>stretch</option>
+      <option value="center">center</option>
+      <option value="baseline">baseline</option>
+    </select>
+    <br>
+
+    <code id="flex-align-items-code">align-items: stretch;</code>
+    <div id="flex-align-items-container" class="container flex-direction-row flex-align-items-stretch">
+      <div class="block">1</div>
+      <div class="block higher-block">2</div>
+      <div class="block">3</div>
+    </div>
+    <hr>
+
+    <h2>align-content</h2>
+    <p>Aligns wrapping flex items in cross-axis (vertically for flex-direction: row, horizontally for flex-direction: column).</p>
+    <p>Only has effect when the flex container has multiple lines of flex items.</p>
+    <ul>
+      <li>flex-start: Flex items will be at the start of the container</li>
+      <li>flex-end: Flex items will be at the end of the container.</li>
+      <li>space-between: Flex items will have equal space between them.</li>
+      <li>space-around: Flex items will have a space before, between, and after them.</li>
+      <li>space-evenly: Flex items will space around evenly.</li>
+      <li>stretch : Flex items will stretch to take up remaining space (default).</li>
+      <li>center: Flex items will go to the middle of the container</li>
+    </ul>
+
+    <select id="flex-align-content-selector" class="property-selector">
+      <option value="flex-start">flex-start</option>
+      <option value="flex-end">flex-end</option>
+      <option value="space-between">space-between</option>
+      <option value="space-around">space-around</option>
+      <option value="space-evenly">space-evenly</option>
+      <option value="stretch" selected>stretch</option>
+      <option value="center">center</option>
+    </select>
+    <br>
+
+    <code id="flex-align-content-code">align-content: stretch;</code>
+    <div id="flex-align-content-container" class="container flex-direction-row flex-wrap-wrap flex-align-content-stretch">
+      <div class="block ">1</div>
+      <div class="block">2</div>
+      <div class="block wider-block">3</div>
+      <div class="block ">4</div>
+      <div class="block wider-block">5</div>
+      <div class="block wider-block">6</div>
+      <div class="block">7</div>
+      <div class="block">8</div>
+      <div class="block">9</div>
+    </div>
+    <hr>
+
+    <p>There are more properties to be added, gap, self-align, grow, shrink, etc.</p>
   </div>
-  <hr>
-
-  <h2>flex-wrap</h2>
-  <p>Specifies if items would wrap according to screen size (resize viewport to notice).</p>
-  <ul>
-    <li>nowrap: Items will not wrap (default).</li>
-    <li>wrap: Items will wrap if necessary.</li>
-    <li>wrap-reverse: Same as wrap but but items go in reverse order.</li>
-  </ul>
-
-  <select id="flex-wrap-selector" class="property-selector">
-    <option value="nowrap" selected>nowrap</option>
-    <option value="wrap">wrap</option>
-    <option value="wrap-reverse">wrap-reverse</option>
-  </select>
-  <br>
-
-  <code id="flex-wrap-code">flex-wrap: nowrap;</code>
-  <div id="flex-wrap-container" class="container flex-direction-row flex-wrap-nowrap">
-    <div class="block">1</div>
-    <div class="block">2</div>
-    <div class="block">3</div>
-    <div class="block">4</div>
-    <div class="block">5</div>
-    <div class="block">6</div>
-    <div class="block">7</div>
-    <div class="block">8</div>
-    <div class="block">9</div>
-  </div>
-  <hr>
-
-  <h2>flex-flow</h2>
-  <p>Is a combination of flex-direction and flex-wrap properties into a single one</p>
-  <code>flex-flow: [direction] [wrap]; </code>
-  <hr>
-  
-  <h2>justify-content</h2>
-  <p>Aligns flex items in main-axis (horizontally).</p>
-  <ul>
-    <li>flex-start: Flex items will be at the start of the container (default)</li>
-    <li>flex-end: Flex items will be at the end of the container.</li>
-    <li>space-between: Flex items will have equal space between them.</li>
-    <li>space-around: Flex items will have a space before, between, and after them.</li>
-    <li>space-evenly: Flex items will space around evenly.</li>
-    <li>center: Flex items will go to the middle of the container</li>
-  </ul>
-
-  <select id="flex-justify-content-selector" class="property-selector">
-    <option value="flex-start" selected>flex-start</option>
-    <option value="flex-end">flex-end</option>
-    <option value="space-between">space-between</option>
-    <option value="space-around">space-around</option>
-    <option value="space-evenly">space-evenly</option>
-    <option value="center">center</option>
-  </select>
-  <br>
-
-  <code id="flex-justify-content-code">justify-content: flex-start;</code>
-  <div id="flex-justify-content-container" class="container flex-direction-row flex-justify-content-flex-start">
-    <div class="block">1</div>
-    <div class="block">2</div>
-    <div class="block">3</div>
-  </div>
-  <hr>
-
-  <h2>align-items</h2>
-  <p>Aligns flex items in cross-axis (vertically).</p>
-  <ul>
-    <li>flex-start: Flex items will be at the top of the container (default)</li>
-    <li>flex-end: Flex items will be at the bottom of the container.</li>
-    <li>stretch : Flex items will stretch to fill remaining space (default).</li>
-    <li>center: Flex items will go to the middle of the container</li>
-    <li>baseline: Flex items will be aligned to their baseline</li>
-  </ul>
-
-  <select id="flex-align-items-selector" class="property-selector">
-    <option value="flex-start">flex-start</option>
-    <option value="flex-end">flex-end</option>
-    <option value="stretch" selected>stretch</option>
-    <option value="center">center</option>
-    <option value="baseline">baseline</option>
-  </select>
-  <br>
-
-  <code id="flex-align-items-code">align-items: stretch;</code>
-  <div id="flex-align-items-container" class="container flex-direction-row flex-align-items-stretch">
-    <div class="block">1</div>
-    <div class="block higher-block">2</div>
-    <div class="block">3</div>
-  </div>
-  <hr>
-
-  <h2>align-content</h2>
-  <p>Aligns wrapping flex items in cross-axis (vertically for flex-direction: row, horizontally for flex-direction: column).</p>
-  <p>Only has effect when the flex container has multiple lines of flex items.</p>
-  <ul>
-    <li>flex-start: Flex items will be at the start of the container</li>
-    <li>flex-end: Flex items will be at the end of the container.</li>
-    <li>space-between: Flex items will have equal space between them.</li>
-    <li>space-around: Flex items will have a space before, between, and after them.</li>
-    <li>space-evenly: Flex items will space around evenly.</li>
-    <li>stretch : Flex items will stretch to take up remaining space (default).</li>
-    <li>center: Flex items will go to the middle of the container</li>
-  </ul>
-
-  <select id="flex-align-content-selector" class="property-selector">
-    <option value="flex-start">flex-start</option>
-    <option value="flex-end">flex-end</option>
-    <option value="space-between">space-between</option>
-    <option value="space-around">space-around</option>
-    <option value="space-evenly">space-evenly</option>
-    <option value="stretch" selected>stretch</option>
-    <option value="center">center</option>
-  </select>
-  <br>
-
-  <code id="flex-align-content-code">align-content: stretch;</code>
-  <div id="flex-align-content-container" class="container flex-direction-row flex-wrap-wrap flex-align-content-stretch">
-    <div class="block ">1</div>
-    <div class="block">2</div>
-    <div class="block wider-block">3</div>
-    <div class="block ">4</div>
-    <div class="block wider-block">5</div>
-    <div class="block wider-block">6</div>
-    <div class="block">7</div>
-    <div class="block">8</div>
-    <div class="block">9</div>
-  </div>
-  <hr>
-
-  <p>There are more properties to be added, gap, self-align, grow, shrink, etc.</p>
-
 </body>
 </html>
